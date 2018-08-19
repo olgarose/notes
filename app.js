@@ -16,9 +16,7 @@ if (command === 'add') {
 
     if (note) {
         console.log('Note created');
-        console.log('--');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     } else {
         console.log('Note title taken');
     }
@@ -26,12 +24,10 @@ if (command === 'add') {
     notes.getAll();
 } else if (command === 'read') {
     var note = notes.getNote(argv.title);
-    console.log("NOTE : ",  note);
+
     if (note) {
         console.log('Note retrieved');
-        console.log('--');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     } else {
         console.log('Note not found');
     }

@@ -39,6 +39,12 @@ var getNote = (title) => {
     return filteredNotes[0];
 };
 
+var logNote = (note) => {
+    console.log('--');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+}
+
 var removeNote = (title) => {
     // fetch notes
     var notes = fetchNotes();
@@ -54,5 +60,6 @@ module.exports = {
     addNote,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    logNote
 };
